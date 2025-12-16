@@ -5,9 +5,9 @@ const p = new Promise(function(resolve, reject) {
   // resolve(value)
 
 // asynchronous promise
-  setTimeout(function() {
-    reject('Time is up!')
-  }, 2000)
+  // setTimeout(function() {
+  //   reject('Time is up!')
+  // }, 2000)
 })
 
 p.then(function(result) {
