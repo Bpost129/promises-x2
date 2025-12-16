@@ -66,8 +66,9 @@
 
 // console.log(texts)
 
+// fetch request using .then
 
-function getUser() {
+function fetchUser() {
   fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => {
     return response.json()
@@ -75,21 +76,10 @@ function getUser() {
   .then(data => {
     console.log(data)
   })
-
-
-  // const response = fetch('https://jsonplaceholder.typicode.com/users')
-  // return new Promise(function(resolve) {
-  //   resolve(response)
-  // })
-
 }
-getUser()
-// .then(function(user) {
-//   console.log(user)
-// })
-// getUser()
+fetchUser()
 
-
+// fetch request using async/await
 
 // async function fetchUser() {
 //   const response = await fetch('https://jsonplaceholder.typicode.com/users')
