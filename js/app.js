@@ -27,20 +27,75 @@
 // })
 
 
-function asyncAdd(a, b, delay) {
-  return new Promise(function(resolve) {
-    setTimeout(function() {
-      resolve(a + b)
-    }, delay)
+// function asyncAdd(a, b, delay) {
+//   return new Promise(function(resolve) {
+//     setTimeout(function() {
+//       resolve(a + b)
+//     }, delay)
+//   })
+// }
+
+
+// asyncAdd(2, 3, 2000)
+// .then(function(sum) {
+//   console.log(sum)
+//   return asyncAdd(sum, 100, 1000)
+// })
+// .then(function(sum) {
+//   console.log(sum)
+// })
+
+
+
+// const urls = [
+//     'https://jsonplaceholder.typicode.com/users',
+//     'https://jsonplaceholder.typicode.com/posts',
+// 		'https://jsonplaceholder.typicode.com/albums',
+// ]
+
+// Promise.all(urls.map(url => 
+//   fetch(url).then(response => response.json())
+// ))
+// .then(data => console.log(data))
+
+// async/await
+// const texts = await Promise.all(urls.map(async url => {
+//   const response = await fetch(url)
+//   return response.json()
+// }))
+
+// console.log(texts)
+
+
+function getUser() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => {
+    return response.json()
   })
+  .then(data => {
+    console.log(data)
+  })
+
+
+  // const response = fetch('https://jsonplaceholder.typicode.com/users')
+  // return new Promise(function(resolve) {
+  //   resolve(response)
+  // })
+
 }
+getUser()
+// .then(function(user) {
+//   console.log(user)
+// })
+// getUser()
 
 
-asyncAdd(2, 3, 2000)
-.then(function(sum) {
-  console.log(sum)
-  return asyncAdd(sum, 100, 1000)
-})
-.then(function(sum) {
-  console.log(sum)
-})
+
+// async function fetchUser() {
+//   const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//   const data = await response.json()
+
+//   console.log(data)
+// }
+
+// fetchUser()
