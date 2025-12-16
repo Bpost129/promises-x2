@@ -1,1 +1,1 @@
-let hi = 'hello'
+const p = new Promise()
