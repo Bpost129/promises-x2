@@ -1,8 +1,8 @@
 const p = new Promise(function(resolve, reject) {
 // synchronous promise  
   // console.log(resolve, reject)
-  // let value = 42
-  // resolve(value)
+  let value = 41
+  resolve(value)
 
 // asynchronous promise
   // setTimeout(function() {
@@ -11,7 +11,17 @@ const p = new Promise(function(resolve, reject) {
 })
 
 p.then(function(result) {
-  console.log(result)
-}).catch(function(err) {
-  console.log(err)
+  console.log(result, '<-- first .then')
+  return 42
 })
+.then(function(result) {
+  console.log(result, '<-- second .then')
+  return 'Done!'
+})
+.then(function(result) {
+  console.log(result, '<-- third .then')
+})
+
+// .catch(function(err) {
+//   console.log(err)
+// })
